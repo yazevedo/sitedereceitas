@@ -1,0 +1,76 @@
+/* Fundo do cabeçalho */
+.header-bg {
+  background-color: #ff7600;
+}
+
+/* Container interno do cabeçalho */
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* Título/logo do site */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none; /* se for um link */
+}
+
+/* Menu de navegação */
+.header-menu {
+  display: flex;
+  gap: 0; /* espaçamento será feito pelos próprios <a> */
+}
+
+/* Links do menu */
+.header-menu a {
+  color: #ffffff;
+  display: inline-block;
+  padding: 16px 10px;
+  text-decoration: none;
+  position: relative;
+  margin-right: 20px;
+}
+
+/* Remover margem extra do último link */
+.header-menu a:last-child {
+  margin-right: 0;
+}
+
+/* Linha animada abaixo dos links */
+.header-menu a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0;
+  background: #ffffff;
+  margin-top: 4px;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+/* Efeito ao passar o mouse */
+.header-menu a:hover::after {
+  width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .header-menu {
+    flex-wrap: wrap;
+  }
+
+  .header-menu a {
+    margin-right: 12px;
+    padding: 12px 8px;
+  }
+}
