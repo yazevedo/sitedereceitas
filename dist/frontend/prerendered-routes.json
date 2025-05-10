@@ -1,0 +1,8 @@
+{
+  "routes": {
+    "/": {},
+    "/cadastro": {},
+    "/login": {},
+    "/mais-sobre": {}
+  }
+}
