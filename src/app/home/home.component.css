@@ -6,14 +6,12 @@
 /* Container interno do cabeçalho */
 .header {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
-}
 
 /* Título/logo do site */
 .logo {
@@ -73,4 +71,5 @@
     margin-right: 12px;
     padding: 12px 8px;
   }
+}
 }
