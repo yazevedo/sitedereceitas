@@ -4,7 +4,7 @@ const conexao = require('../db');
 
 // POST /cadastro
 router.post('/cadastro', (req, res) => {
-  const { nome, login, senha, email } = req.body;
+  const {  nome_usuario, nome_completo, senha, email } = req.body;
   const sql = 'INSERT INTO usuarios (nome, login, senha, email) VALUES (?, ?, ?, ?)';
   conexao.query(sql, [nome, login, senha, email], (err, result) => {
     if (err) return res.status(500).send(err);
@@ -22,7 +22,7 @@ router.get('/', (req, res) => {
 
 // PUT /senha (alterar senha por login)
 router.put('/senha', (req, res) => {
-  const { login, novaSenha } = req.body;
+  const { nome_usuario, novaSenha } = req.body;
   const sql = 'UPDATE usuarios SET senha = ? WHERE login = ?';
   conexao.query(sql, [novaSenha, login], (err, result) => {
     if (err) return res.status(500).send(err);
@@ -32,7 +32,7 @@ router.put('/senha', (req, res) => {
 
 // DELETE /conta (por login)
 router.delete('/conta', (req, res) => {
-  const { login } = req.body;
+  const { nome_usuario } = req.body;
   conexao.query('DELETE FROM usuarios WHERE login = ?', [login], (err, result) => {
     if (err) return res.status(500).send(err);
     res.send('Conta excluída com sucesso.');
