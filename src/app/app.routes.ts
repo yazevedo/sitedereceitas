@@ -7,7 +7,7 @@ import { MaisobreComponent } from './maisobre/maisobre.component';
 
 export const routes: Routes = [
   { path: 'cadastro', component: CadastroComponent },
-  { path: '', component: HomeComponent },  // Caminho vazio geralmente leva à Home
+  { path: 'home', component: HomeComponent },  // Caminho vazio geralmente leva à Home
   { path: '', component: HomeComponent },  // Caminho vazio geralmente leva à Home
   { path: 'login', component: LoginComponent },
   { path: 'mais-sobre', component: MaisobreComponent }
