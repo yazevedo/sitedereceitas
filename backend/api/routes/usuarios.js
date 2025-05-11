@@ -4,9 +4,15 @@ const conexao = require('../db');
 
 // POST /cadastro
 router.post('/cadastro', (req, res) => {
-  const {  nome_usuario, nome_completo, senha, email } = req.body;
-  const sql = 'INSERT INTO usuarios (nome, login, senha, email) VALUES (?, ?, ?, ?)';
-  conexao.query(sql,  [nome_usuario, nome_completo, senha, email], (err, result) => {
+  const { nome_completo, nome_usuario, senha, email } = req.body;
+
+  // Verificar se todos os campos foram passados
+  if (!nome_completo || !nome_usuario || !senha || !email) {
+    return res.status(400).send('Todos os campos são obrigatórios.');
+  }
+
+  const sql = 'INSERT INTO usuarios (nome_completo, nome_usuario, senha, email) VALUES (?, ?, ?, ?)';
+  conexao.query(sql, [nome_completo, nome_usuario, senha, email], (err, result) => {
     if (err) return res.status(500).send(err);
     res.status(201).send('Usuário cadastrado!');
   });
@@ -20,20 +26,30 @@ router.get('/', (req, res) => {
   });
 });
 
-// PUT /senha (alterar senha por login)
+// PUT /senha (alterar senha por nome_usuario)
 router.put('/senha', (req, res) => {
   const { nome_usuario, novaSenha } = req.body;
-  const sql = 'UPDATE usuarios SET senha = ? WHERE login = ?';
-  conexao.query(sql, [novaSenha, login], (err, result) => {
+
+  if (!nome_usuario || !novaSenha) {
+    return res.status(400).send('Nome de usuário e nova senha são obrigatórios.');
+  }
+
+  const sql = 'UPDATE usuarios SET senha = ? WHERE nome_usuario = ?';
+  conexao.query(sql, [novaSenha, nome_usuario], (err, result) => {
     if (err) return res.status(500).send(err);
     res.send('Senha alterada com sucesso.');
   });
 });
 
-// DELETE /conta (por login)
+// DELETE /conta (por nome_usuario)
 router.delete('/conta', (req, res) => {
   const { nome_usuario } = req.body;
-  conexao.query('DELETE FROM usuarios WHERE login = ?', [login], (err, result) => {
+
+  if (!nome_usuario) {
+    return res.status(400).send('Nome de usuário é obrigatório.');
+  }
+
+  conexao.query('DELETE FROM usuarios WHERE nome_usuario = ?', [nome_usuario], (err, result) => {
     if (err) return res.status(500).send(err);
     res.send('Conta excluída com sucesso.');
   });
