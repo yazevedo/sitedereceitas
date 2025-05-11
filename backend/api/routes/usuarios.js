@@ -6,7 +6,7 @@ const conexao = require('../db');
 router.post('/cadastro', (req, res) => {
   const {  nome_usuario, nome_completo, senha, email } = req.body;
   const sql = 'INSERT INTO usuarios (nome, login, senha, email) VALUES (?, ?, ?, ?)';
-  conexao.query(sql, [nome, login, senha, email], (err, result) => {
+  conexao.query(sql,  [nome_usuario, nome_completo, senha, email], (err, result) => {
     if (err) return res.status(500).send(err);
     res.status(201).send('Usuário cadastrado!');
   });
