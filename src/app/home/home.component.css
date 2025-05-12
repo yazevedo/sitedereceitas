@@ -41,8 +41,9 @@ body {
   font-family: 'Segoe UI', Tahoma, sans-serif;
   color: #333;
   margin: 0;
-  padding-top: 80px;
+  padding-top: 120px; /* Aumentei aqui! */
 }
+
 .introducao-bg {
   padding: 40px 20px;
   text-align: center;
@@ -190,4 +191,11 @@ body {
   color: #ccc;
   border-top: 1px solid #555;
   padding-top: 15px;
+}
+
+.introducao-bg,
+.carousel,
+.colunas {
+  position: relative;
+  z-index: 1;
 }
