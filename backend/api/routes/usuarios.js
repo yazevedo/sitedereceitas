@@ -18,6 +18,23 @@ router.post('/cadastro', (req, res) => {
   });
 });
 
+router.post('/login', (req, res) => {
+  const { nome_usuario, senha } = req.body;
+
+  if (!nome_usuario || !senha) {
+    return res.status(400).json({ mensagem: 'Usuário e senha são obrigatórios.' });
+  }
+
+  const sql = 'SELECT * FROM usuarios WHERE nome_usuario = ? AND senha = ?';
+  conexao.query(sql, [nome_usuario, senha], (err, results) => {
+    if (err) return res.status(500).json({ mensagem: 'Erro no servidor.' });
+    if (results.length === 0) return res.status(401).json({ mensagem: 'Credenciais inválidas.' });
+
+    // Aqui seria ideal gerar um JWT, mas para simplicidade:
+    res.status(200).json({ token: 'falso-token-exemplo' });
+  });
+});
+
 // GET /usuarios
 router.get('/', (req, res) => {
   conexao.query('SELECT * FROM usuarios', (err, results) => {
