@@ -26,7 +26,7 @@ export class CadastroComponent {
     this.http.post('http://localhost:3000/usuarios/cadastro', this.usuario)
       .subscribe({
         next: () => this.mensagem = 'Usuário cadastrado com sucesso!',
-        error: err => this.mensagem = 'Erro ao cadastrar: ' + err.error
+        error: err => this.mensagem = 'Erro ao cadastrar: ' + (err.error?.message || err.message || err.statusText)
       });
   }
 }

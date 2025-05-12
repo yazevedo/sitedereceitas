@@ -14,7 +14,7 @@ router.post('/cadastro', (req, res) => {
   const sql = 'INSERT INTO usuarios (nome_completo, nome_usuario, senha, email) VALUES (?, ?, ?, ?)';
   conexao.query(sql, [nome_completo, nome_usuario, senha, email], (err, result) => {
     if (err) return res.status(500).send(err);
-    res.status(201).send('Usuário cadastrado!');
+    res.status(201).json({ mensagem: 'Usuário cadastrado!' });
   });
 });
 
