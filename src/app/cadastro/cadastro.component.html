@@ -1,36 +1,11 @@
-<div class="container mt-4">
-  <h1 class="text-center mb-4">Receitas da Semana</h1>
+<h2>Cadastro de Usuário</h2>
+<form (ngSubmit)="cadastrarUsuario()" #cadastroForm="ngForm">
+  <input type="text" name="nome_completo" [(ngModel)]="usuario.nome_completo" placeholder="Nome completo" required />
+  <input type="text" name="nome_usuario" [(ngModel)]="usuario.nome_usuario" placeholder="Nome de usuário" required />
+  <input type="email" name="email" [(ngModel)]="usuario.email" placeholder="Email" required />
+  <input type="password" name="senha" [(ngModel)]="usuario.senha" placeholder="Senha" required />
 
-  <!-- Carousel -->
-  <div id="carouselReceitas" class="carousel slide mb-5" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="imagem1.jpg" class="d-block w-100 rounded" alt="Receita 1">
-      </div>
-      <div class="carousel-item">
-        <img src="imagem2.jpg" class="d-block w-100 rounded" alt="Receita 2">
-      </div>
-      <div class="carousel-item">
-        <img src="imagem3.jpg" class="d-block w-100 rounded" alt="Receita 3">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselReceitas" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselReceitas" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
+  <button type="submit">Cadastrar</button>
+</form>
 
-  <!-- Lista de receitas -->
-  <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let recipe of recipes">
-      <div class="card h-100 shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">{{ recipe.title }}</h5>
-          <p class="card-text">{{ recipe.description }}</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<p *ngIf="mensagem">{{ mensagem }}</p>
