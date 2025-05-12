@@ -8,6 +8,6 @@ export default `<!DOCTYPE html><html lang="en" data-beasties-container><head>
 </style><link rel="stylesheet" href="styles-BVJQD57C.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-BVJQD57C.css"></noscript></head>
 <body>
   <app-root ng-version="19.2.10" ng-server-context="ssg"><router-outlet></router-outlet><app-login><p>login works!</p></app-login><!----></app-root>
-<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-Z6VWI63P.js" defer></script><script src="main-XWDH7QV5.js" type="module"></script>
+<script src="polyfills-FFHMD2TL.js" type="module"></script><script src="scripts-Z6VWI63P.js" defer></script><script src="main-ILP2V3QV.js" type="module"></script>
 
 </body></html>`;
