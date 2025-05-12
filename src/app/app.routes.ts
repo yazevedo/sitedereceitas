@@ -1,16 +1,12 @@
 import { NgModule } from '@angular/core';  // Adicionar a importação de NgModule
 import { RouterModule, Routes } from '@angular/router';  // Importar RouterModule e Routes
-import { CadastroComponent } from './cadastro/cadastro.component';
-import { HomeComponent } from './home/home.component';
-import { LoginComponent } from './login/login.component';
-import { MaisobreComponent } from './maisobre/maisobre.component';
 
 export const routes: Routes = [
-  { path: 'cadastro', component: CadastroComponent },  // Rota para o componente de cadastro
-  { path: 'home', component: HomeComponent },  // Caminho vazio geralmente leva à Home
-  { path: '', component: HomeComponent },  // Caminho vazio geralmente leva à Home
-  { path: 'login', component: LoginComponent },
-  { path: 'mais-sobre', component: MaisobreComponent }
+  { path: 'cadastro', loadComponent: () => import('./cadastro/cadastro.component').then(m => m.CadastroComponent) },
+  { path: 'home', loadComponent: () => import('./home/home.component').then(m => m.HomeComponent) },
+  { path: '', loadComponent: () => import('./home/home.component').then(m => m.HomeComponent) },
+  { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
+  { path: 'mais-sobre', loadComponent: () => import('./maisobre/maisobre.component').then(m => m.MaisobreComponent) }
 ];
 
 @NgModule({

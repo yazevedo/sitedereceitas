@@ -1,9 +1,12 @@
-/* Fundo do cabeçalho */
+/* ======= HEADER ======= */
 .header-bg {
   background-color: #ff7600;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
 }
-
-/* Container interno do cabeçalho */
 .header {
   display: flex;
   justify-content: space-between;
@@ -11,236 +14,180 @@
   padding: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  box-sizing: border-box;
-
-/* Título/logo do site */
+}
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
   color: #ffffff;
-  text-decoration: none; /* se for um link */
 }
-
-/* Menu de navegação */
 .header-menu {
   display: flex;
-  gap: 0; /* espaçamento será feito pelos próprios <a> */
+  gap: 0;
 }
-
-/* Links do menu */
 .header-menu a {
   color: #ffffff;
   display: inline-block;
   padding: 16px 10px;
   text-decoration: none;
-  position: relative;
   margin-right: 20px;
 }
-
-/* Remover margem extra do último link */
-.header-menu a:last-child {
-  margin-right: 0;
+.header-menu a:hover {
+  text-decoration: underline;
 }
 
-/* Linha animada abaixo dos links */
-.header-menu a::after {
-  content: "";
-  display: block;
-  height: 2px;
-  width: 0;
-  background: #ffffff;
-  margin-top: 4px;
-  transition: width 0.3s ease;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-}
-
-/* Efeito ao passar o mouse */
-.header-menu a:hover::after {
-  width: 100%;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .header-menu {
-    flex-wrap: wrap;
-  }
-
-  .header-menu a {
-    margin-right: 12px;
-    padding: 12px 8px;
-  }
-}
-}
-/* Fundo do cabeçalho */
-/* Fixando o header */
-.header-bg {
-  background-color: #ff7600;
-  position: fixed; /* Fixar o header no topo */
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-/* Container interno do cabeçalho */
-.header {
-  display: flex;
-  flex-wrap: wrap;
-@@ -15,21 +19,16 @@
-  box-sizing: border-box;
-}
-
-/* Título/logo do site */
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffffff;
-  text-decoration: none; /* se for um link */
-}
-
-/* Menu de navegação */
-.header-menu {
-  display: flex;
-  gap: 0; /* espaçamento será feito pelos próprios <a> */
-}
-
-/* Links do menu */
-.header-menu a {
-  color: #ffffff;
-  display: inline-block;
-@@ -39,12 +38,10 @@
-  margin-right: 20px;
-}
-
-/* Remover margem extra do último link */
-.header-menu a:last-child {
-  margin-right: 0;
-}
-
-/* Linha animada abaixo dos links */
-.header-menu a::after {
-  content: "";
-  display: block;
-@@ -58,12 +55,10 @@
-  left: 0;
-}
-
-/* Efeito ao passar o mouse */
-.header-menu a:hover::after {
-  width: 100%;
-}
-
-/* Responsividade */
-@media (max-width: 600px) {
-  .header-menu {
-    flex-wrap: wrap;
-@@ -74,3 +69,107 @@
-    padding: 12px 8px;
-  }
-}
-
-/* ======= ESTILO GERAL ======= */
+/* ======= GERAL ======= */
 body {
   background-color: #fffaf5;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   color: #333;
   margin: 0;
-  padding-top: 80px; /* Ajusta o espaço após o header fixo */
+  padding-top: 80px;
 }
-
 .introducao-bg {
   padding: 40px 20px;
   text-align: center;
 }
-
 .introducao h1 {
   font-size: 2.5rem;
   color: #ff7600;
-  margin-bottom: 15px;
 }
-
 .introducao p {
   font-size: 1.1rem;
   max-width: 600px;
-  margin: 0 auto;
-  color: #555;
+  margin: 0 auto 15px;
+}
+.introducao a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #ff7600;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+.introducao a:hover {
+  background-color: #e96100;
 }
 
-/* ======= CARROSSEL ======= */
-.carousel-inner img {
-  border-radius: 16px;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.carousel-item:hover img {
-  transform: scale(1.02);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* ======= SEÇÃO DE RECEITAS ======= */
+/* ======= RECEITAS ======= */
 .colunas {
   padding: 40px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
-
 .segundo.titulo h1 {
   text-align: center;
   color: #ff7600;
   font-size: 2rem;
-  margin-bottom: 10px;
 }
-
 .segundo.titulo h2 {
   text-align: center;
   font-size: 1.2rem;
   color: #888;
   margin-bottom: 30px;
 }
-
-.colunas > div:not(.segundo.titulo) {
+.grid-receitas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+.receita-item {
   background-color: #fff;
   border-radius: 16px;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-  margin-bottom: 30px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: 0.3s;
 }
-
-.colunas > div:not(.segundo.titulo):hover {
+.receita-item:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.1);
 }
-
-.colunas h1 {
+.receita-item h1 {
   color: #ff7600;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
 }
-
-.colunas p {
-  margin: 10px 0;
-}
-
-.colunas a {
-  display: inline-block;
+.receita-item a {
   margin-top: 10px;
-  padding: 10px 16px;
+  display: inline-block;
   background-color: #ff7600;
   color: white;
+  padding: 10px 16px;
   border-radius: 8px;
   text-decoration: none;
-  transition: background-color 0.3s ease, transform 0.2s ease;
 }
-
-.colunas a:hover {
+.receita-item a:hover {
   background-color: #e96100;
-  transform: scale(1.05);
+}
+.imagem-receita img {
+  width: 100%;
+  border-radius: 12px;
+  margin-top: 10px;
 }
 
-/* ======= GRID DE RECEITAS ======= */
-.grid-receitas {
+/* ======= CARROSSEL ======= */
+.carousel-inner img {
+  border-radius: 16px;
+  height: 400px;
+  object-fit: cover;
+}
+
+/* ======= FOOTER ======= */
+.footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px 20px;
+  font-size: 0.95rem;
+}
+.footer-container {
   display: grid;
- grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.footer-column h4 {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+  color: #ff7600;
+}
+.footer-column p,
+.footer-column ul {
+  margin: 6px 0;
+  line-height: 1.5;
+}
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+.footer-column ul li {
+  margin-bottom: 8px;
+}
+.footer-column ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+.footer-column ul li a:hover {
+  color: #ff7600;
+}
+.social-icons a {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 8px;
+}
+.social-icons img {
+  width: 24px;
+  height: 24px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s ease;
+}
+.social-icons img:hover {
+  transform: scale(1.1);
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #ccc;
+  border-top: 1px solid #555;
+  padding-top: 15px;
 }

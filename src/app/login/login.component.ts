@@ -1,30 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-login',
-  standalone: true,
-  imports: [CommonModule, FormsModule],
+  standalone: true,  // Importante para funcionar com loadComponent
+  imports: [CommonModule, HttpClientModule],
   templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']  // Corrigido "styleUrl" para "styleUrls"
 })
-export class LoginComponent {
-  nome_usuario = '';
-  senha = '';
-  mensagem = '';
-
-  constructor(private auth: AuthService, private router: Router) {}
-
-  login() {
-    this.auth.login(this.nome_usuario, this.senha).subscribe({
-      next: (res) => {
-        this.router.navigate(['/receitas']);
-      },
-      error: () => {
-        this.mensagem = 'Usuário ou senha inválidos.';
-      }
-    });
-  }
-}
+export class LoginComponent { }
