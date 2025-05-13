@@ -1,20 +1,18 @@
 <div class="login-container">
   <h2>Login</h2>
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <form (ngSubmit)="fazerLogin()" [formGroup]="formLogin">
     <div>
       <label for="nome_usuario">Usuário:</label>
-      <input id="nome_usuario" formControlName="nome_usuario" type="text" />
+      <input id="nome_usuario" formControlName="nome_usuario" />
     </div>
 
     <div>
       <label for="senha">Senha:</label>
-      <input id="senha" formControlName="senha" type="password" />
+      <input id="senha" type="password" formControlName="senha" />
     </div>
 
-    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+    <button type="submit" [disabled]="formLogin.invalid">Entrar</button>
 
-    <div *ngIf="errorMessage" style="color: red; margin-top: 10px;">
-      {{ errorMessage }}
-    </div>
+    <p *ngIf="erroLogin" class="erro">{{ erroLogin }}</p>
   </form>
 </div>
