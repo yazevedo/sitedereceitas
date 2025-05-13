@@ -1,1 +1,20 @@
-<p>login works!</p>
+<div class="login-container">
+  <h2>Login</h2>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="nome_usuario">Usuário</label>
+      <input id="nome_usuario" formControlName="nome_usuario" type="text" />
+    </div>
+
+    <div>
+      <label for="senha">Senha</label>
+      <input id="senha" formControlName="senha" type="password" />
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Entrar</button>
+    
+    <div *ngIf="erroLogin" class="erro-msg">
+      {{ erroLogin }}
+    </div>
+  </form>
+</div>
