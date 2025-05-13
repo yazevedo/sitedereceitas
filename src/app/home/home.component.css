@@ -1,7 +1,7 @@
 /* ======= HEADER ======= */
 .header-bg {
   background-color: #aa4f25;
-  position: fixed;
+  position: static;
   width: 100%;
   top: 0;
   left: 0;
@@ -11,8 +11,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  max-width: 1200px;
+  padding: 10px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 .logo {
@@ -29,7 +29,7 @@
   display: inline-block;
   padding: 16px 10px;
   text-decoration: none;
-  margin-right: 20px;
+  margin-right: 1px;
 }
 .header-menu a:hover {
   text-decoration: underline;
@@ -60,7 +60,7 @@ body {
   display: inline-block;
   margin-top: 15px;
   padding: 10px 20px;
-  background-color: #ff7600;
+  background-color: #ff7700;
   color: white;
   border-radius: 8px;
   text-decoration: none;
@@ -99,6 +99,22 @@ body {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
   transition: 0.3s;
 }
+.imagem-receita{
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+.imagem-receita h1 {
+  text-align: center;
+  color: #ff7600;
+  font-size: 2rem;
+}
+
+
+
 .receita-item:hover {
   transform: translateY(-6px);
 }
