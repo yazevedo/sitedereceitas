@@ -1,33 +1,107 @@
+/* ======= GERAL ======= */
 body {
-  background-color: #fffaf5;
+  margin: 0;
   font-family: 'Segoe UI', Tahoma, sans-serif;
   color: #333;
-  margin: 0;
 }
 
+/* ======= HEADER ======= */
+.header-bg {
+  background-color: #ff7600;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.header-menu {
+  display: flex;
+  gap: 0;
+}
+
+.header-menu a {
+  color: #ffffff;
+  display: inline-block;
+  padding: 16px 10px;
+  text-decoration: none;
+  margin-right: 20px;
+  transition: text-decoration 0.3s;
+}
+
+.header-menu a:last-child {
+  margin-right: 0;
+}
+
+.header-menu a:hover {
+  text-decoration: underline;
+}
+
+/* ======= FUNDO E CONTAINER EXTERNO ======= */
+.login-background {
+  background: url('/imagem4.png') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  padding-top: 120px; /* Compensa a altura do header fixo */
+  margin-top: 0;
+}
+
+/* ======= CONTAINER DE LOGIN ======= */
 .login-container {
   max-width: 400px;
-  margin: 120px auto 0 auto;
+  width: 100%;
   padding: 40px 24px;
-  background: #fff;
+  background: rgba(255, 255, 255, 0.95); /* Fundo translúcido */
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-h2 {
+/* ======= TÍTULO ======= */
+.login-container h2 {
   color: #ff7600;
   margin-bottom: 30px;
   text-align: center;
 }
 
+/* ======= FORMULÁRIO ======= */
 form {
   width: 100%;
   display: flex;
   flex-direction: column;
   gap: 18px;
+}
+
+form > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 10px;
 }
 
 label {
@@ -37,12 +111,15 @@ label {
 }
 
 input {
+  width: 100%;
+  box-sizing: border-box;
   padding: 10px;
   font-size: 1rem;
   border: 1px solid #eee;
   border-radius: 6px;
   background: #fafafa;
   transition: border-color 0.3s;
+  margin-top: 4px;
 }
 
 input:focus {
@@ -50,6 +127,7 @@ input:focus {
   outline: none;
 }
 
+/* ======= BOTÃO DE ENTRAR ======= */
 button[type="submit"] {
   background-color: #ff7600;
   color: white;
@@ -71,6 +149,7 @@ button[disabled] {
   cursor: not-allowed;
 }
 
+/* ======= MENSAGEM DE ERRO ======= */
 .erro {
   color: #e96100;
   text-align: center;

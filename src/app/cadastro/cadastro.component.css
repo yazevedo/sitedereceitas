@@ -46,25 +46,51 @@
 }
 
 /* ======= GERAL ======= */
-body {
-  background-color: #fffaf5;
-  font-family: 'Segoe UI', Tahoma, sans-serif;
-  color: #333;
+body, .cadastro-main {
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Se quiser o fundo em toda a aplicação */
+  background: url('/imagem4.png') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* OU, se quiser só no main do cadastro */
+.cadastro-main {
+  min-height: 100vh;
+  background: url('/imagem4.png') no-repeat center center fixed;
+  background-size: cover;
   padding-top: 120px;
 }
 
-/* ======= FORMULÁRIO DE CADASTRO ======= */
-main {
-  margin-top: 120px;
-  padding: 40px 20px;
-  max-width: 500px;
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+/* Adicione um fundo branco translúcido no formulário para melhor leitura */
+.cadastro-main {
+  min-height: 100vh;
+  background: url('/imagem4.png') no-repeat center center fixed;
+  background-size: cover;
+  padding-top: 120px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
+
+.form-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 40px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
 
 h2 {
   text-align: center;

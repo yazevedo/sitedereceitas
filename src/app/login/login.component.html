@@ -1,18 +1,30 @@
-<div class="login-container">
-  <h2>Login</h2>
-  <form (ngSubmit)="fazerLogin()" [formGroup]="formLogin">
-    <div>
-      <label for="nome_usuario">Usuário:</label>
-      <input id="nome_usuario" formControlName="nome_usuario" />
-    </div>
+<header class="header-bg fixed-top">
+  <div class="header">
+    <div class="logo">NutriMundo</div>
+    <nav class="header-menu" aria-label="primaria">
+      <a href="/cadastro">Cadastro</a>
+      <a href="/home">Home</a>
+    </nav>
+  </div>
+</header>
 
-    <div>
-      <label for="senha">Senha:</label>
-      <input id="senha" type="password" formControlName="senha" />
-    </div>
+<div class="login-background">
+  <div class="login-container">
+    <h2>Login</h2>
+    <form (ngSubmit)="fazerLogin()" [formGroup]="formLogin">
+      <div>
+        <label for="nome_usuario">Usuário:</label>
+        <input id="nome_usuario" formControlName="nome_usuario" />
+      </div>
 
-    <button type="submit" [disabled]="formLogin.invalid">Entrar</button>
+      <div>
+        <label for="senha">Senha:</label>
+        <input id="senha" type="password" formControlName="senha" />
+      </div>
 
-    <p *ngIf="erroLogin" class="erro">{{ erroLogin }}</p>
-  </form>
+      <button type="submit" [disabled]="formLogin.invalid">Entrar</button>
+
+      <p *ngIf="erroLogin" class="erro">{{ erroLogin }}</p>
+    </form>
+  </div>
 </div>

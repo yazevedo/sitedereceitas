@@ -1,1 +1,35 @@
-<p>receitas works!</p>
+<div class="page-wrapper">
+  <!-- Cabeçalho -->
+<header class="header">
+  <h1>NutriMundo</h1>
+  <button class="sair-btn" (click)="sair()">Sair</button>
+</header>
+
+  <!-- Conteúdo principal -->
+  <main class="receitas-container">
+    <div class="receita-card" *ngFor="let receita of receitas">
+      <img [src]="receita.imagem" alt="Imagem da receita" class="receita-imagem" />
+      <h3>{{ receita.nome }}</h3>
+      <button (click)="mostrarDetalhes(receita)">Ver Receita</button>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="footer">
+    <p>&copy; 2025 Receitas Saudáveis. Todos os direitos reservados.</p>
+  </footer>
+</div>
+
+<!-- Modal (fora do wrapper) -->
+<div class="detalhes-overlay" *ngIf="detalhesVisible">
+  <div class="detalhes-container">
+    <h2>{{ receitaSelecionada.nome }}</h2>
+    <h4>Ingredientes:</h4>
+    <ul>
+      <li *ngFor="let ingrediente of receitaSelecionada.ingredientes">{{ ingrediente }}</li>
+    </ul>
+    <h4>Modo de Preparo:</h4>
+    <p>{{ receitaSelecionada.modoDePreparo }}</p>
+    <button (click)="fecharDetalhes()">Fechar</button>
+  </div>
+</div>
