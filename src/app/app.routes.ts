@@ -10,6 +10,8 @@ export const routes: Routes = [
   { path: 'home', loadComponent: () => import('./home/home.component').then(m => m.HomeComponent) },
   { path: '', loadComponent: () => import('./home/home.component').then(m => m.HomeComponent) },
   { path: 'login', loadComponent: () => import('./login/login.component').then(m => m.LoginComponent) },
+  { path: 'perfil', canActivate: [AuthGuard], loadComponent: () => import('./perfil/perfil.component').then(m => m.PerfilComponent) },
+
 ];
 
 @NgModule({

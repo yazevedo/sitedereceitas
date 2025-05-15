@@ -54,7 +54,7 @@ router.put('/senha', (req, res) => {
   const sql = 'UPDATE usuarios SET senha = ? WHERE nome_usuario = ?';
   conexao.query(sql, [novaSenha, nome_usuario], (err, result) => {
     if (err) return res.status(500).send(err);
-    res.send('Senha alterada com sucesso.');
+    res.status(200).json({ mensagem: 'Senha alterada com sucesso.' });
   });
 });
 
@@ -68,7 +68,7 @@ router.delete('/conta', (req, res) => {
 
   conexao.query('DELETE FROM usuarios WHERE nome_usuario = ?', [nome_usuario], (err, result) => {
     if (err) return res.status(500).send(err);
-    res.send('Conta excluída com sucesso.');
+    res.status(200).json({ mensagem: 'Conta excluída com sucesso.' });
   });
 });
 

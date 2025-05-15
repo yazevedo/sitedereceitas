@@ -1,9 +1,12 @@
 <div class="page-wrapper">
   <!-- Cabeçalho -->
-<header class="header">
-  <h1>NutriMundo</h1>
-  <button class="sair-btn" (click)="sair()">Sair</button>
-</header>
+  <header class="header">
+    <h1>NutriMundo</h1>
+    <div class="header-actions">
+      <button class="btn-voltar" (click)="perfil()">Perfil</button>
+      <button class="sair-btn" (click)="sair()">Sair</button>
+    </div>
+  </header>
 
   <!-- Conteúdo principal -->
   <main class="receitas-container">

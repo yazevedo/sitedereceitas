@@ -1,6 +1,7 @@
 // receitas.component.ts
 
 import { Component } from '@angular/core';
+import { Router } from '@angular/router'; 
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -11,6 +12,8 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./receitas.component.css']
 })
 export class ReceitasComponent {
+  constructor(private router: Router) {}
+
   receitas = [
     {
       nome: 'Salmão Grelhado com Arroz Integral e Legumes',
@@ -110,6 +113,11 @@ export class ReceitasComponent {
   sair() {
   localStorage.removeItem('token');
   window.location.href = '/home'; // ou '/login', dependendo da sua rota
+  }
+
+  perfil(): void {
+  this.router.navigate(['/perfil']);
+  }
 }
 
-}
+

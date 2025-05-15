@@ -8,7 +8,7 @@ import { catchError, tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private baseUrl = 'http://localhost:3000/login';
+  private baseUrl = 'http://localhost:3000/usuarios/login';
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -17,6 +17,8 @@ export class AuthService {
       tap(res => {
         localStorage.setItem('token', res.token); // salva o token fake
         this.router.navigate(['/receitas']);
+        localStorage.setItem('nome_usuario', nome_usuario);
+
       }),
       catchError(err => throwError(() => err))
     );

@@ -34,6 +34,7 @@ export class LoginComponent {
         next: (res) => {
           // Armazene o token (fictício por enquanto)
           localStorage.setItem('token', res.token);
+          localStorage.setItem('nome_usuario', this.formLogin.value.nome_usuario);
           this.router.navigate(['/receitas']); // Redireciona após login
         },
         error: (err) => {

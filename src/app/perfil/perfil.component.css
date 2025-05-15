@@ -1,0 +1,132 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff7f00; /* Laranja */
+  color: white;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.container {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-voltar {
+  background-color: #ff7f27;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 16px;
+}
+
+.btn-voltar:hover {
+  background-color: #e56e1c;
+}
+
+.btn-voltar {
+  background-color: #ff7f27;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 16px;
+}
+
+.btn-voltar:hover {
+  background-color: #e56e1c;
+}
+
+.sair-btn {
+  background-color: #ff7f27;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-left: 0;
+}
+
+.sair-btn:hover {
+  background-color: #e56e1c;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  padding: 30px;
+  width: 350px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+  text-align: center;
+  color: #f57c00;
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #ff7f00;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button.danger {
+  background-color: #e53935;
+}
+
+hr {
+  margin: 30px 0;
+}
+
+.footer {
+  background-color: #333; /* Cinza escuro */
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 40px;
+}
